@@ -12,5 +12,9 @@ import { TimeComponent } from './time/time.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'homework-timezone-app';
+  selectedTimezone = 'Europe/Budapest';
+
+  handleTimezoneChange(timezone: string) {
+    this.selectedTimezone = timezone;
+  }
 }

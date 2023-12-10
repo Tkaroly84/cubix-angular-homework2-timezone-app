@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input,Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,6 +8,29 @@ import { CommonModule } from '@angular/common';
   templateUrl: './time.component.html',
   styleUrls: ['./time.component.scss']
 })
+
 export class TimeComponent {
 
+  @Input() timezone = "'Europe/Budapest'";
+  @Input() isCurrent = false;
+
+  @Output() changeTimezone = new EventEmitter<string>();
+
+    time='';
+
+    constructor() { }
+
+    ngOnInit(): void {
+      this.timeUpdate();
+    }
+
+  timeUpdate(){
+    //new Date().toLocaleString("en-US", {timeZone: "America/New_York"})
+    this.time = new Date().toLocaleString('hu-HU', { timeZone: this.timezone });
+
+  }
+  
+  timeZoneSelectorClick(){
+    this.changeTimezone.emit(this.timezone)
+  }
 }

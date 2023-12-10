@@ -1,4 +1,6 @@
 h1 {
+  width: 90%;
+  margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
@@ -10,8 +12,9 @@ h1 {
 }
 
 #app-contianer {
+  margin: auto;
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-evenly;
   background-color: rgb(176, 223, 207);
   border-radius: 15px;

@@ -1,12 +1,20 @@
 <body>
 
     <p>Jelenlegi időzóna:</p>
-    <p>time works!</p>
+    <p>{{timezone}}</p>
+    <p>{{time}}</p>
+
 
     <div id="buttons-container">
 
-        <button type="button" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-secondary">Selected</button>
+        <button 
+            (click)="timeUpdate()"
+             type="button" class="btn btn-primary">Frissítés</button>
+        <button 
+            (click)="timeZoneSelectorClick()"
+            [disabled]="isCurrent"
+             type="button" class="btn btn-secondary">Jelenleginek jelöl</button>
 
     </div>
+
 </body>

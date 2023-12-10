@@ -2,7 +2,18 @@
 
 <div id="app-contianer">
 
-  <app-time></app-time>
-  <app-time></app-time>
+<!--az első komponens-->
+  <app-time 
+    [timezone]="'Europe/Budapest'"
+    [isCurrent]="selectedTimezone === 'Europe/Budapest'"
+    (changeTimezone)="handleTimezoneChange($event)"
+  />
 
+<!--a második komponens-->
+  <app-time 
+    [timezone]="'America/New_York'"
+    [isCurrent]="selectedTimezone === 'America/New_York'"
+    (changeTimezone)="handleTimezoneChange($event)"
+  />
+    
 </div>
