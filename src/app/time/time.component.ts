@@ -11,19 +11,21 @@ import { CommonModule } from '@angular/common';
 
 export class TimeComponent {
 
-  @Input() timezone = "'Europe/Budapest'";
+  @Input() timezone = "'Europe/Budapest'";   //a szülőtől érkezik majd []-ben a megfelelő adat
   @Input() isCurrent = false;
 
-  @Output() changeTimezone = new EventEmitter<string>();
+
+  @Output() changeTimezone = new EventEmitter<string>(); //kiközvetítjük a szülő felé, hogy a másik button-nal jelölés történt
 
     time='';
-
-    constructor() { }
-
+   
+    /*
     ngOnInit(): void {
       this.timeUpdate();
     }
-
+    */
+   
+// a gyerekkomponens button-functionja
   timeUpdate(){
     //new Date().toLocaleString("en-US", {timeZone: "America/New_York"})
     this.time = new Date().toLocaleString('hu-HU', { timeZone: this.timezone });
