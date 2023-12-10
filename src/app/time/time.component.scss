@@ -1,0 +1,17 @@
+body{
+    width: 300px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    p{
+        text-align: center;
+    }
+}
+#buttons-container{
+    display: flex;
+    justify-content: space-evenly;
+    button{
+        margin: 10px;
+    }
+}
